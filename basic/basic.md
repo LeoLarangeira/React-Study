@@ -178,7 +178,32 @@ false || false; // false
 !false; // true
 
 ```
+# Tipagem dinâmica e fraca 
 
+O JS é uma linguagem __dinâmica__ com __tipos dinâmicos__. As variáveis não são diretamente associadas a nenhum tipo de valor especifíco, e qualquer variável pode receber (e reatribuir) valores de todos os tipos.
+
+
+```javascript 
+let foo = 42 // foo agora é um int
+
+foo = "bar"; // foo agora é uma string
+
+foo = true; // foo agora é um booleano
+```
+
+O JS tambem é uma linguagem com __tipagem fraca__, o que significa que permite a __conversão implicita__ de tipo quando uma operação envolve tipos incompatíveis, em vez de gerar __erros de tipo__!
+
+```javascript
+
+const foo = 42; //foo inicialmente é inicializada como inteiro
+
+const result = foo + "1"; // o JS transforma foo em uma string para que possa ser concatenada
+
+console.log(result); // 412
+
+```
+
+Coerções implícitas são muito convenientes, porem podem ser uma arma em potencial se os desenvolvedores não pretendem fazer a conversão ou pretendem converter na outra direção (por exemplo, string para número em vez de número para string!). Para __symbols__ e __BigInts__, o JS desativou intencionalmente certas conversões de tipo implicito.
 # Tipos de Variáveis
 
 Em JavaScript, existem três tipos principais de variáveis: números, strings e objetos. Cada um desses tipos de variáveis pode armazenar diferentes tipos de dados.
@@ -265,3 +290,110 @@ Este é um tipo especial que representa a ausência intencional de qualquer obje
 ```
 
 # Estrutura de dados
+
+__Todas__ as linguagens de programação __possuem estruturas de dados__ embutidas, embora essas estruturas possam variar de uma linguagem para outra. No entanto, sua __essência e propósito _geralmente_ são os mesmos__. Essas estruturas são projetadas para serem utilizadas na construção de outras formas de dados, e sempre que possível, faremos comparações com outras linguagens.
+
+Em resumo, uma __estrutura de dados__ é um formato que __organiza__, __gerencia__ e __armazena dados__, oferecendo meios de __acesso__ e __modificações__.
+
+## Arrays
+
+É um tipo de dado que pode armazenar múltiplos valores em uma única variável.
+
+```javascript 
+let numbers = [1,2,3,4,5,6]; //numbers é um array
+let letters = ['a', 'b','c','d']; //letters é um array 
+let name = ['l','e','o']; //name tambem e um array
+```
+Em JS também é possível colocar valores de multiplos tipos no mesmo array.
+
+```javascript 
+let arr = ['store', 1, 'whatever', 2.0, 'you want', true];
+```
+
+Essa é uma característica crucial; dessa forma, podemos incorporar mais de um array dentro de outro em JavaScript, resultando no __array multidimensional__.
+
+```javascript
+let arr = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    ];
+```
+## Objects (hash-tables) && Maps
+
+Em JavaScript, tanto objetos (Objects) quanto mapas (Maps) são estruturas de dados usadas para armazenar pares chave-valor. No entanto, existem algumas diferenças fundamentais entre eles:
+
+É dessa maneira que criamos um object e um map em JS:
+```javascript
+// Objeto em JavaScript
+
+const objetoExemplo = {
+  chaveString: 'valor1',
+  'outra-chave': 'valor2',
+  42: 'valor3'
+};
+
+// Mapa em JavaScript
+const mapaExemplo = new Map([
+  ['chaveString', 'valor1'],
+  ['outra-chave', 'valor2'],
+  [42, 'valor3']
+]);
+```
+
+### Diferenças fundamentais 
+
+#### 1. Tipo de Chave 
+
+- __Objetos__: As chaves em objetos JavaScript são strings ou símbolos. No entanto, as strings são automaticamente convertidas em símbolos se necessário.
+- __Mapas__: As chaves em mapas podem ser de qualquer tipo de dado, incluindo objetos, funções e valores primitivos.
+
+```javascript
+// Tipo de Chave
+objetoExemplo[42] = 'valor4'; // A chave 42 é automaticamente convertida em uma string.
+mapaExemplo.set(function() {}, 'valor4'); // Função como chave.
+```
+
+#### 2. Ordem das Chaves
+
+- __Objetos__: Não garantem uma ordem específica das chaves. A ordem das propriedades pode depender de vários fatores, como o mecanismo JavaScript ou a ordem de inserção.
+- __Mapas__: Mantêm a ordem de inserção das chaves. Isso significa que a ordem em que você insere e itera sobre as chaves será a mesma.
+
+```javascript
+// Ordem das Chaves
+console.log(Object.keys(objetoExemplo)); // Pode variar a ordem.
+for (const [chave, valor] of mapaExemplo) {
+  console.log(chave, valor); // Ordem garantida.
+}
+```
+
+#### 3. Iteração
+
+- __Objetos__: Para iterar sobre as propriedades de um objeto, você precisa usar técnicas como __for...in__ ou __*Object.keys()*__.
+- __Mapas__: Oferecem métodos __dedicados__ para iteração, como __forEach__, __for...of__, e outros, o que torna mais __fácil__ trabalhar com eles em comparação com __objetos__.
+
+```javascript
+// Iteração
+Object.keys(objetoExemplo).forEach(chave => console.log(chave, objetoExemplo[chave]));
+mapaExemplo.forEach((valor, chave) => console.log(chave, valor));
+```
+
+#### 4. Tamanho
+- __Objetos__: **Não** possuem um método direto para **obter** o **número** de **propriedades**. Você precisa usar **_Object.keys(obj).length._**
+- __Mapas__: Têm um método **size** que fornece **diretamente** o **número** de pares **chave-valor**.
+
+```javascript
+// Tamanho
+console.log(Object.keys(objetoExemplo).length); // Número de propriedades.
+console.log(mapaExemplo.size); // Método size diretamente.
+```
+### 5. Uso em Contextos Especificos
+- __Objetos__: São mais **comumente** usados quando as **chaves** são **strings** ou **símbolos** e quando a **_ordem das propriedades_** **_não importa muito_**.
+- __Mapas__: São preferidos quando é _**necessário manter a ordem das chaves**_, ou quando as _**chaves podem ser de vários tipos diferentes**_.
+
+
+
+## List 
+
+
+### Tuplas 
