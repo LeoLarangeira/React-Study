@@ -392,8 +392,19 @@ console.log(mapaExemplo.size); // Método size diretamente.
 - __Mapas__: São preferidos quando é _**necessário manter a ordem das chaves**_, ou quando as _**chaves podem ser de vários tipos diferentes**_.
 
 
+Em resumo, enquanto objetos são mais adequados para casos simples com chaves de string ou símbolos, mapas oferecem flexibilidade adicional com tipos de chave variados, ordem garantida e métodos específicos para iteração e manipulação. A escolha entre eles depende do contexto específico de uso.
 
-## List 
+
+## Set
+O set é uma coleção de valores únicos, onde cada valor deve ser único. ele fornece métodos para adicionar, remover e verificar a existência de elementos:
+
+```javascript 
+const meuSet = new Set([1, 2, 3, 3, 4]); //  {1, 2, 3, 4}
+meuSet.add(5); //{1, 2, 3, 4, 5}
+console.log(meuSet.has(3)); // Saída: true
+```
 
 
-### Tuplas 
+### Array Buffer e TypedArrays
+
+Array Buffer é uma estrutura de dados que representa uma área de memória bruta, enquanto Typed Arrays fornecem uma visão específica desse buffer, permitindo o trabalho com dados binários de maneira eficiente. Exemplo:
