@@ -438,3 +438,107 @@ Ao usar Typed Arrays, você pode manipular dados binários de maneira eficiente,
 Ambas as estruturas, Array Buffers e Typed Arrays, são comumente usadas em conjunto para manipular dados binários em JavaScript de maneira eficiente e segura. Elas são especialmente úteis em cenários onde o desempenho e o controle preciso dos dados são essenciais.
 
 ## WeakMap e WeakSet
+WeakMap e WeakSet são variantes de Map e Set, respectivamente, que permitem a coleta de lixo dos itens quando não são mais referenciados em outras partes do código.
+
+### WeakMap
+
+Um WeakMap é uma coleção de pares chave-valor em que as chaves são objetos e os valores podem ser de qualquer tipo. Ao contrário de um Map regular, as chaves em um WeakMap são __fracas__ __(weak)__, o que significa que não impedem a coleta de lixo para os objetos usados como chaves. _Em outras palavras, se não houver outras referências para um objeto usado como chave, ele pode ser removido da memória._
+
+#### Uso típico:
+Os WeakMaps são úteis quando você deseja associar dados adicionais a objetos sem impedir que esses objetos sejam coletados pelo garbage collector. Isso é particularmente útil em situações onde você está anexando informações a objetos temporários ou privados.
+
+```javascript
+let weakMap = new WeakMap();
+
+let objetoChave = {};
+weakMap.set(objetoChave, "Valor associado à chave");
+
+console.log(weakMap.get(objetoChave)); // Saída: Valor associado à chave
+
+```
+
+### WeakSet
+
+Semelhante a um WeakMap, um WeakSet é uma coleção de objetos. No entanto, em um WeakSet, os objetos são fracos e não impedem a coleta de lixo. _A principal característica é que, ao contrário de um Set regular, um WeakSet só aceita objetos como membros e não permite iteração sobre seus elementos._
+
+#### Uso típico
+WeakSets são __úteis__ quando você precisa __manter__ uma __coleção de objetos únicos__, mas __não deseja impedir__ a __coleta de lixo__ nesses objetos.
+
+```javascript
+let weakSet = new WeakSet();
+
+let objeto1 = {};
+let objeto2 = {};
+
+weakSet.add(objeto1);
+weakSet.add(objeto2);
+
+console.log(weakSet.has(objeto1)); // Saída: true
+console.log(weakSet.has(objeto2)); // Saída: true
+
+// Não há método para iterar sobre elementos em um WeakSet
+```
+
+_Em resumo, WeakMap e WeakSet são úteis quando você precisa associar dados a objetos ou manter uma coleção de objetos únicos, mas deseja permitir que esses objetos sejam coletados pelo garbage collector quando não são mais referenciados em outras partes do código._
+
+## Funções 
+
+As funções em JavaScript são __blocos de código__ que realizam uma tarefa específica. Elas permitem que você armazene um pedaço de código que realiza uma tarefa dentro de um bloco, e então __chame aquele código__ sempre que você __precisar usá-lo__ com um curto comando.
+Existem várias maneiras de definir funções em JS.
+
+### __1- Função declarada__: É a maneira mais comum de definir uma função.
+Uma função declarada tem um nome e pode ser chamada antes de ser definida graças ao conceito de hoisting
+
+```javascript 
+
+function myFunction(){
+  console.log("Hello World")
+}
+
+```
+
+### __2 - Função Expressão__: Nesse caso, a função é atribuída a uma variavel. 
+
+Essa função é anônima, o que significa que ela não tem um nome próprio. Funções expressas não sofrem hoisting, o que significa que devem ser definidas antes de serem chamadas
+```javascript
+var myFunction = function(){
+  console.log("Hello World")
+}
+
+```
+### __3 - Função Seta (arrow function)__: Introduzida no ES6, é uma maneira mais curta de escrever funções. 
+São frequentemente usadas em códigos modernos de JavaScript. As funções de seta não têm seu próprio this, arguments, super ou new.target. Além disso, elas não podem ser usadas como construtores. Outra característica importante das funções de seta é que elas não sofrem hoisting
+
+```javascript
+const myFunction = () =>{
+  console.log("Hello World")
+}
+```
+
+Para chamar uma função, você precisa usar o nome da função seguida por parênteses():
+
+```javascript
+myFunction() // Imprime Hello World 
+```
+
+As funções aceitam parâmetros, que são valores que você pode passar para a função quando a chama:
+
+```javascript
+function myFunction(name){
+  console.log("Hello " + name)
+}
+
+var myVarFunction = function(name){
+  console.log("Hello " + name)
+}
+
+const myArrowFunction = (name) => {
+  console.log("Hello " + name)
+}
+
+myFunction("Leo") // Hello Leo
+myVarFunction("Leo") // Hello Leo
+myArrowFunction("Leo") // Hello Leo
+```
+
+Em resumo, você deve usar funções declaradas quando quiser criar uma função no escopo global e torná-la disponível em todo o código. Use expressões de função para limitar o local em que a função estará disponível, manter o escopo global mais leve e fazer a manutenção de uma sintaxe limpa. As funções de seta são úteis para funções menores e quando você quer manter o contexto de this
