@@ -405,6 +405,36 @@ console.log(meuSet.has(3)); // Saída: true
 ```
 
 
-### Array Buffer e TypedArrays
+## Array Buffer e TypedArrays
 
-Array Buffer é uma estrutura de dados que representa uma área de memória bruta, enquanto Typed Arrays fornecem uma visão específica desse buffer, permitindo o trabalho com dados binários de maneira eficiente. Exemplo:
+Array Buffer é uma estrutura de dados que representa uma área de memória bruta, enquanto Typed Arrays fornecem uma visão específica desse buffer, permitindo o trabalho com dados binários de maneira eficiente.
+### Arrary buffer
+
+O ArrayBuffer é uma estrutura de daos que representa uma área de memória bruta. Ao contrário de arrays tradicionais em JS, o ArrayBuffer não permite acesso direto aos seus elementos. Em vez disso, ele fornece um local para armazenar dados binários de forma eficiente. O tamanho do ArrayBuffer é especificado em bytes durante a criação.
+
+
+```javascript
+const buffer = new ArrayBuffer(8) 
+```
+_Eu recomendo realizar testes com essas variáveis para observar como funcionam na prática. Isso proporcionará uma perspectiva mais concreta e enriquecerá sua compreensão durante os estudos._
+
+### Typed Arrays
+
+Os Typed Arrays são vistas específicas dos dados armazenados em um 'ArrayBuff'. Eles fornecem maneiras eficientes de interagir com dados binários, proporcionando uma interface para ler e escrever valores de tipos especificos. Existem vários tipos de Typed Arrays, como __Int8Array__, __Uint8Array__, __Int16Array__, __Uint16Array__, __Int32Array__, __Uint32Array__, __Float32Array__ e __Float64Array__, cada um correspondendo a um tipo de dado específico.
+
+```javascript
+const buffer = new ArrayBuffer(16); //16 bytes
+const intArray = new Int32Array(buffer); // Cria uma "vista" de 4 inteiros de 32 bits
+
+// Atribui valores aos inteiros
+intArray[0] = 42;
+intArray[1] = 17;
+
+console.log(intArray); // Saída: Int32Array [ 42, 17, 0, 0 ]
+```
+
+Ao usar Typed Arrays, você pode manipular dados binários de maneira eficiente, especialmente útil em operações que requerem manipulação direta de bytes, como processamento de imagens, áudio e comunicação de rede.
+
+Ambas as estruturas, Array Buffers e Typed Arrays, são comumente usadas em conjunto para manipular dados binários em JavaScript de maneira eficiente e segura. Elas são especialmente úteis em cenários onde o desempenho e o controle preciso dos dados são essenciais.
+
+## WeakMap e WeakSet
