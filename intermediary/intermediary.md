@@ -71,3 +71,7 @@ Ferramenta fundamental para testes rápidos e experimentação com JavaScript, f
 3. __Experiência do Usuário Interativa:__
 
 - Implemente interações visuais e feedback em tempo real para melhorar a experiência do usuário durante o desenvolvimento.
+
+## Introdução à componentização com React: Desvendando a Estrutura Modular das interfaces de Usuárioi.
+
+Compo
