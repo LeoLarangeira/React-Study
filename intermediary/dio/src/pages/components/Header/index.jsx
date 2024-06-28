@@ -30,7 +30,7 @@ const Header = () =>{
                     <Row>
                         <MenuRight href="a"> Home </MenuRight>
                         <Button title = "Entrar"/>
-                        <Button title = "Cadastrar" variant="secondary"/>
+                        <Button title = "Cadastrar"/>
                         
                     </Row>
             </Container>
