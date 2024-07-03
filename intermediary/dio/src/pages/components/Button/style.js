@@ -10,6 +10,8 @@ export const ButtonContainer = styled.button`
     min-width: 120px;
     width: 100%;
     border: none;
+    margin-right: 5px;
+    font-size: 16px;
     
     ${({variant}) => variant !== "primary" && css`
         min-width: 167px;
@@ -21,7 +23,8 @@ export const ButtonContainer = styled.button`
             content: '';
             border: none;
             position: absolute;
-    
+            font-size: 16px;
+
             top: -5px;
             left: -6px;
             width: calc(100% + 10px);

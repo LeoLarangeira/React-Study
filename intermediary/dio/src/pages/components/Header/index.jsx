@@ -12,8 +12,17 @@ import {
 
  } from "./style";
 import logo from "../../../assets/dio.svg"
+import { useNavigate } from "react-router-dom";
 
 const Header = () =>{
+    const navigate = useNavigate();
+    const loginOnClick = () =>{
+        navigate("/login")
+    }
+    const registrationOnClick = () => {
+        navigate("/registration")
+    }
+
     return(
         <Wrapper> 
             <Container> 
@@ -28,9 +37,9 @@ const Header = () =>{
                     </Row>
 
                     <Row>
-                        <MenuRight href="a"> Home </MenuRight>
-                        <Button title = "Entrar"/>
-                        <Button title = "Cadastrar"/>
+                        <MenuRight href="/home"> Home </MenuRight>
+                        <Button variant="primary" onClick={loginOnClick} title = "Entrar"/>
+                        <Button variant="primary" onClick={registrationOnClick} title = "Cadastrar"/>
                         
                     </Row>
             </Container>

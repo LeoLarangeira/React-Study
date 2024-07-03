@@ -43,6 +43,7 @@ export const BuscarInputContainer = styled.div`
     height: 30px; 
     background: #202037; 
     border-radius: 8px;
+    font-size: 16px; 
     padding: 2px 5px; 
     margin: 0 12px;  
 `
@@ -51,7 +52,7 @@ export const BuscarInputContainer = styled.div`
 export const Menu = styled.div`
     font-family: "Open Sans", 
     font-style: normal;  
-    font-size: 12px; 
+    font-size: 16px; 
     line-height: 25px; 
     color: white; 
     margin-right: 12px; 
@@ -63,10 +64,10 @@ export const Menu = styled.div`
 export const MenuRight = styled.div`
     font-family: "Open Sans", 
     font-style: normal;  
-    font-size: 12px; 
+    font-size: 16px; 
     line-height: 25px; 
     color: white; 
-    margin-right: 12px; 
+    margin-right: 15px; 
     text-decoration: none; 
 
 `

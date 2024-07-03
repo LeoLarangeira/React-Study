@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Button } from "../components/Button"
 import { Header } from "../components/Header"
 import { Title, Container, TitleHightLight, TextContent } from "./style"
+import logo from "../../assets/wallpaper-home.png";
 import { useNavigate } from "react-router-dom"
 
 
@@ -32,7 +33,7 @@ const Home = () => {
                 <Button title="Começar Agora" variant="secondary" onClick={handleSignin}></Button>
             </div>
             <div>
-                <img src="" alt="happy-people"/>
+                <img src = {logo} alt="happy-people"/>
             </div>
         </Container>
 

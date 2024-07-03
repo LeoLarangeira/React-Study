@@ -97,3 +97,19 @@ export const ErrorText = styled.p`
     font-size: 12px; 
 
 `
+
+export const FootNote = styled.p`
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold; 
+`
+
+export const AccountText = styled.p`
+    font-size: 12px;
+    font-weight: bold; 
+    a{
+        font-size: 12px;
+        font-weight: bold; 
+        color: #23DD7A;
+    }
+`
