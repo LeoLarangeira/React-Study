@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Leo",
+      "email": "leo@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "teste",
+      "email": "mail@mail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "7edb",
+      "name": "teste-project",
+      "email": "teste_login@mail.com",
+      "password": "12314124151"
+    },
+    {
+      "id": "d010",
+      "name": "ai papai socorro",
+      "email": "nossa_funcionou@mail.com",
+      "password": "12314512514521"
+    }
+  ]
+}
