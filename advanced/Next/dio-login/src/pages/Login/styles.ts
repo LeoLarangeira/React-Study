@@ -4,11 +4,11 @@ export const Container = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura ajustável conforme necessário */
+    height: 100vh;
 `
 
 export const GridLayout = styled.div`
-    width: 300px; /* Largura do formulário */
+    width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;   
@@ -29,6 +29,6 @@ export const Title = styled.h2`
   margin-bottom : 20px; 
   line-height: 44px;
 
-  color: white; 
+  color: black; 
 
 `

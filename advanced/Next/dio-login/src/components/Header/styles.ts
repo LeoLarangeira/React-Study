@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 60px;
-  background-color: #333;
   color: white;
   display: flex;
   align-items: center;
@@ -18,5 +17,4 @@ export const Logo = styled.img`
 
 export const Title = styled.h1`
   margin-left: 10px;
-  background-color: #333
 `;
